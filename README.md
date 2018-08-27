@@ -1,10 +1,16 @@
 # Packer-AzureVM-Builder
 
-##Setup Azure config
+###Setup Azure config
 ./azure_setup.sh setup
+
 #### Above command is not required if already logged in through azure-cli.
-#### ubuntu.json file has all the required configs mentioned
+
+### Replace these values in ubuntu.json with respective credentials
+"client_id": "xxxx",
+"client_secret": "xxxx",
+"tenant_id": "xxx",
+"subscription_id": "xxx",
 
 
-##Run Packer builder
+###Run Packer builder
 $ packer build ubuntu.json
