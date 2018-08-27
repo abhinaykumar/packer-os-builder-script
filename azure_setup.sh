@@ -266,8 +266,3 @@ case "$1" in
         showhelp
         ;;
 esac
-
-
-# ManagedImageResourceGroupName: videokenpackerbuild
-# ManagedImageName: videoken-packer-ubuntu-18
-# ManagedImageLocation: westus2

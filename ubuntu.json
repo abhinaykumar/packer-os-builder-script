@@ -2,13 +2,13 @@
   "builders": [{
     "type": "azure-arm",
 
-    "client_id": "e5eacbfb-2dc7-40a1-a154-7cf2fc305741",
-    "client_secret": "o4KWq2g7EXhMsjQqjTEIcGQLZcAFn6La",
-    "tenant_id": "c2be3fac-44d6-4e8f-81ea-c4805faa3bb9",
-    "subscription_id": "866e3c55-ed51-44ea-bf06-23b38c58dc29",
+    "client_id": "xxxx",
+    "client_secret": "xxxx",
+    "tenant_id": "xxx",
+    "subscription_id": "xxx",
 
     "managed_image_resource_group_name": "packerazurebuilder",
-    "managed_image_name": "packer-ubuntu-16-04-imagemagick",
+    "managed_image_name": "packer-ubuntu-16-04",
 
     "os_type": "Linux",
     "image_publisher": "Canonical",
