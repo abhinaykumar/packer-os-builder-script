@@ -37,7 +37,13 @@
     {
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} bash '{{ .Path }}'",
       "type": "shell",
-      "scripts": ["setup_rvm_ruby.sh","setup_redis.sh","setup_imagemagick.sh"]
+      "scripts": [
+        "setup_rvm_ruby.sh",
+        "setup_redis.sh",
+        "setup_imagemagick.sh",
+        "generate_ssh_key.sh",
+        "create_required_dir_files.sh"
+      ]
     }
   ]
 }
