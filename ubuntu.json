@@ -42,8 +42,17 @@
         "setup_redis.sh",
         "setup_imagemagick.sh",
         "generate_ssh_key.sh",
-        "create_required_dir_files.sh"
+        "create_required_dir.sh"
       ]
+    },
+    {
+      "type": "shell-local",
+      "scripts": ["download_yml_from_production.sh"]
+    },
+    {
+      "type": "file",
+      "source": ["database.yml", "application.yml"],
+      "destination": "/home/packer/videoken/shared/config/"
     }
   ]
 }
