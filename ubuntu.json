@@ -2,12 +2,12 @@
   "builders": [{
     "type": "azure-arm",
 
-    "client_id": "e5eacbfb-2dc7-40a1-a154-7cf2fc305741",
-    "client_secret": "o4KWq2g7EXhMsjQqjTEIcGQLZcAFn6La",
+    "client_id": "fa47d72b-d8c0-46cb-b108-bdcfc9a43395",
+    "client_secret": "ZXAo1CU7UKmQdIanPOHn+xJUHqZEC2db",
     "tenant_id": "c2be3fac-44d6-4e8f-81ea-c4805faa3bb9",
     "subscription_id": "866e3c55-ed51-44ea-bf06-23b38c58dc29",
 
-    "managed_image_resource_group_name": "packerazurebuilder",
+    "managed_image_resource_group_name": "Production",
     "managed_image_name": "packer-ubuntu-16-04",
 
     "os_type": "Linux",
@@ -21,7 +21,7 @@
     },
 
     "location": "West US 2",
-    "vm_size": "Standard_D4s_v3"
+    "vm_size": "Standard_D8s_v3"
   }],
   "provisioners": [
     {
@@ -29,7 +29,7 @@
       "inline": [
         "apt-get update",
         "apt-get upgrade -y",
-        "apt-get -y install build-essential libssl-dev libreadline-dev curl zlib1g-dev libcurl4-openssl-dev libpq-dev software-properties-common libffi-dev"
+        "apt-get -y install build-essential tcl libssl-dev libreadline-dev curl zlib1g-dev libcurl4-openssl-dev libpq-dev software-properties-common libffi-dev"
       ],
       "inline_shebang": "/bin/sh -x",
       "type": "shell"
@@ -38,21 +38,13 @@
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} bash '{{ .Path }}'",
       "type": "shell",
       "scripts": [
-        "setup_rvm_ruby.sh",
+        "setup_rvm_ruby_passenger.sh",
         "setup_redis.sh",
         "setup_imagemagick.sh",
-        "generate_ssh_key.sh",
-        "create_required_dir.sh"
+        "create_dir_and_files.sh",
+        "add_bash_aliases.sh"
+        "generate_ssh_key.sh"
       ]
-    },
-    {
-      "type": "shell-local",
-      "scripts": ["download_yml_from_production.sh"]
-    },
-    {
-      "type": "file",
-      "source": ["database.yml", "application.yml"],
-      "destination": "/home/packer/videoken/shared/config/"
     }
   ]
 }

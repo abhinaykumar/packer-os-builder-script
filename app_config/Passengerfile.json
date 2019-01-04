@@ -1,0 +1,8 @@
+{
+    "port": 6000,
+    "environment": "staging",
+    "min_instances": 8,
+    "max_pool_size": 32,
+    "pool_idle_time": 10,
+    "daemonize": true
+}

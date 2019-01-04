@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 25
+  username: postgres
+  password: kendb@123
+  port: 5432
+  host: 10.0.7.7
+
+staging:
+  <<: *default
+  database: videoken_api_staging
