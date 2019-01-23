@@ -12,7 +12,7 @@ if [ "$image_name" = "" ]; then
   image_name="packer-ubuntu-16-04"
 fi
 
-az vm create --resource-group $res_grp --name $vm_name --image $image_name --admin-username packer --ssh-dest-key-path /home/packer/.ssh/authorized_keys --ssh-key-value ~/.ssh/videoken-stage.pub
+az vm create --resource-group $res_grp --name $vm_name --image $image_name --admin-username packer --ssh-dest-key-path /home/packer/.ssh/authorized_keys --ssh-key-value ~/.ssh/videoken-production.pub
 
 # use below code to copy database.yml application.yml and Passengerfile.json to new instance
 # scp ubuntu@`echo $output | jq -r '.publicIpAddress'`:~/test.txt ./

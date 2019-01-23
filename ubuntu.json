@@ -30,6 +30,7 @@
         "apt-get update",
         "apt-get upgrade -y",
         "apt-get -y install build-essential tcl libssl-dev libreadline-dev curl zlib1g-dev libcurl4-openssl-dev libpq-dev software-properties-common libffi-dev"
+        "apt-get -y install pip"
       ],
       "inline_shebang": "/bin/sh -x",
       "type": "shell"
@@ -42,7 +43,7 @@
         "setup_redis.sh",
         "setup_imagemagick.sh",
         "create_dir_and_files.sh",
-        "add_bash_aliases.sh"
+        "add_bash_aliases.sh",
         "generate_ssh_key.sh"
       ]
     }
