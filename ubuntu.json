@@ -1,14 +1,13 @@
 {
   "builders": [{
     "type": "azure-arm",
-
-    "client_id": "fa47d72b-d8c0-46cb-b108-bdcfc9a43395",
-    "client_secret": "ZXAo1CU7UKmQdIanPOHn+xJUHqZEC2db",
+    "client_id": "b89db897-6ec2-4791-8ac7-a08034138a0e",
+    "client_secret": "98061ea7-7a14-45e9-9ddb-20f69931506f",
     "tenant_id": "c2be3fac-44d6-4e8f-81ea-c4805faa3bb9",
-    "subscription_id": "866e3c55-ed51-44ea-bf06-23b38c58dc29",
+    "subscription_id": "83de2415-0cfb-40e9-b499-f6a0b8fae0f6",
 
-    "managed_image_resource_group_name": "Production",
-    "managed_image_name": "packer-ubuntu-16-04",
+    "managed_image_resource_group_name": "packertest",
+    "managed_image_name": "videoken-api-image-ubuntu16",
 
     "os_type": "Linux",
     "image_publisher": "Canonical",
@@ -30,7 +29,6 @@
         "apt-get update",
         "apt-get upgrade -y",
         "apt-get -y install build-essential tcl libssl-dev libreadline-dev curl zlib1g-dev libcurl4-openssl-dev libpq-dev software-properties-common libffi-dev"
-        "apt-get -y install pip"
       ],
       "inline_shebang": "/bin/sh -x",
       "type": "shell"
@@ -42,6 +40,8 @@
         "setup_rvm_ruby_passenger.sh",
         "setup_redis.sh",
         "setup_imagemagick.sh",
+        "setup_python_dependencies.sh",
+        "setup_filebeat.sh",
         "create_dir_and_files.sh",
         "add_bash_aliases.sh",
         "generate_ssh_key.sh"
