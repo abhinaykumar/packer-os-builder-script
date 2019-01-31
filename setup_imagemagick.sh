@@ -1,24 +1,30 @@
 #!/bin/bash -e
 
-sudo apt-get install imagemagick -y
+# sudo apt-get install imagemagick -y
 
-# sudo apt-get -y install checkinstall
-# sudo apt-get -y build-dep imagemagick
+sudo apt-get remove imagemagick
 
-# wget https://www.imagemagick.org/download/ImageMagick.tar.gz
+mkdir ~/src
 
-# tar xf ImageMagick.tar.gz
+cd ~/src
 
-# cd ImageMagick-7*
+wget https://www.imagemagick.org/download/releases/ImageMagick-6.8.9-10.tar.xz
 
-# ./configure
+sudo apt-get -y install build-essential checkinstall
 
-# make
+sudo apt-get -y build-dep imagemagick
 
-# sudo make install
 
-# sudo ldconfig /usr/local/lib
+tar xf ImageMagick-6.8.9-10.tar.xz
 
-# echo `identify -version`
+cd ImageMagick-6*
 
-# make check
+./configure
+
+make
+
+sudo make install
+
+sudo ldconfig /usr/local/lib
+
+echo `identify -version`
